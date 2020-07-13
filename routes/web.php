@@ -108,7 +108,7 @@ $router->group(['prefix' => 'v1', 'namespace' => 'v1'], function () use ($router
             // Pesan Paket
             $router->post('/pesan-paket', 'Inkubator\PembayaranController@bayar');
             $router->post('/konfirmasi-pembayaran', 'Inkubator\PembayaranController@konfirmasi');
-            $router->post('/riwayat-pembayaran', 'Inkubator\PembayaranController@riwayat_menunggu');
+            $router->get('/riwayat-pembayaran', 'Inkubator\PembayaranController@riwayat_menunggu');
         });
     });
     
