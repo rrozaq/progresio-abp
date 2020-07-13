@@ -1,0 +1,38 @@
+[23-May-2020 00:49:11 UTC] PHP Warning:  Uncaught ErrorException: require(/home/progres2/public_html/api/bootstrap/../routes/web.php): failed to open stream: No such file or directory in /home/progres2/public_html/api/bootstrap/app.php:112
+Stack trace:
+#0 /home/progres2/public_html/api/bootstrap/app.php(112): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(2, 'require(/home/p...', '/home/progres2/...', 112, Array)
+#1 /home/progres2/public_html/api/bootstrap/app.php(112): require()
+#2 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#3 /home/progres2/public_html/api/vendor/laravel/lumen-framework/src/Routing/Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#4 /home/progres2/public_html/api/bootstrap/app.php(113): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#5 /home/progres2/public_html/api/public/index.php(14): require('/home/progres2/...')
+#6 {main}
+  thrown in /home/progres2/public_html/api/bootstrap/app.php on line 112
+[23-May-2020 00:49:11 UTC] PHP Warning:  Uncaught ErrorException: require(/home/progres2/public_html/api/bootstrap/../routes/web.php): failed to open stream: No such file or directory in /home/progres2/public_html/api/bootstrap/app.php:112
+Stack trace:
+#0 /home/progres2/public_html/api/bootstrap/app.php(112): Laravel\Lumen\Application->Laravel\Lumen\Concerns\{closure}(2, 'require(/home/p...', '/home/progres2/...', 112, Array)
+#1 /home/progres2/public_html/api/bootstrap/app.php(112): require()
+#2 [internal function]: {closure}(Object(Laravel\Lumen\Routing\Router))
+#3 /home/progres2/public_html/api/vendor/laravel/lumen-framework/src/Routing/Router.php(62): call_user_func(Object(Closure), Object(Laravel\Lumen\Routing\Router))
+#4 /home/progres2/public_html/api/bootstrap/app.php(113): Laravel\Lumen\Routing\Router->group(Array, Object(Closure))
+#5 /home/progres2/public_html/api/public/index.php(14): require('/home/progres2/...')
+#6 {main}
+  thrown in /home/progres2/public_html/api/bootstrap/app.php on line 112
+[23-May-2020 00:49:11 UTC] PHP Fatal error:  {closure}(): Failed opening required '/home/progres2/public_html/api/bootstrap/../routes/web.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/progres2/public_html/api/bootstrap/app.php on line 112
+[23-May-2020 00:49:11 UTC] PHP Fatal error:  {closure}(): Failed opening required '/home/progres2/public_html/api/bootstrap/../routes/web.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/progres2/public_html/api/bootstrap/app.php on line 112
+[03-Jun-2020 14:35:42 UTC] PHP Warning:  require_once(/home/progres2/public_html/api/bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in /home/progres2/public_html/api/bootstrap/app.php on line 3
+[03-Jun-2020 14:35:42 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/progres2/public_html/api/bootstrap/../vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/progres2/public_html/api/bootstrap/app.php on line 3
+[03-Jun-2020 14:35:52 UTC] PHP Warning:  require_once(/home/progres2/public_html/api/bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in /home/progres2/public_html/api/bootstrap/app.php on line 3
+[03-Jun-2020 14:35:52 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/progres2/public_html/api/bootstrap/../vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/progres2/public_html/api/bootstrap/app.php on line 3
+[03-Jun-2020 14:35:53 UTC] PHP Warning:  require_once(/home/progres2/public_html/api/bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in /home/progres2/public_html/api/bootstrap/app.php on line 3
+[03-Jun-2020 14:35:53 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/progres2/public_html/api/bootstrap/../vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/progres2/public_html/api/bootstrap/app.php on line 3
+[03-Jun-2020 14:36:06 UTC] PHP Warning:  require_once(/home/progres2/public_html/api/bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in /home/progres2/public_html/api/bootstrap/app.php on line 3
+[03-Jun-2020 14:36:06 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/progres2/public_html/api/bootstrap/../vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/progres2/public_html/api/bootstrap/app.php on line 3
+[03-Jun-2020 14:36:10 UTC] PHP Warning:  require_once(/home/progres2/public_html/api/bootstrap/../vendor/autoload.php): failed to open stream: No such file or directory in /home/progres2/public_html/api/bootstrap/app.php on line 3
+[03-Jun-2020 14:36:10 UTC] PHP Fatal error:  require_once(): Failed opening required '/home/progres2/public_html/api/bootstrap/../vendor/autoload.php' (include_path='.:/opt/alt/php72/usr/share/pear') in /home/progres2/public_html/api/bootstrap/app.php on line 3
+[08-Jun-2020 04:06:27 UTC] PHP Fatal error:  Class 'App\Http\Resources\JsonResource' not found in /home/progres2/public_html/api/app/Resources/ListBoardResource.php on line 7
+[08-Jun-2020 04:11:23 UTC] PHP Fatal error:  Class 'App\Http\Resources\JsonResource' not found in /home/progres2/public_html/api/app/Resources/ListBoardResource.php on line 7
+[08-Jun-2020 04:12:32 UTC] PHP Fatal error:  Class 'App\Http\Resources\JsonResource' not found in /home/progres2/public_html/api/app/Resources/ListBoardResource.php on line 7
+[08-Jun-2020 04:16:52 UTC] PHP Fatal error:  Class 'App\Http\Resources\JsonResource' not found in /home/progres2/public_html/api/app/Resources/ListBoardResource.php on line 7
+[08-Jun-2020 04:18:34 UTC] PHP Fatal error:  Class 'App\Http\Resources\JsonResource' not found in /home/progres2/public_html/api/app/Resources/ListBoardResource.php on line 7
+[08-Jun-2020 04:18:54 UTC] PHP Fatal error:  Class 'App\Http\Resources\JsonResource' not found in /home/progres2/public_html/api/app/Resources/ListBoardResource.php on line 7
