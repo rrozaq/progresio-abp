@@ -20,6 +20,11 @@ class Incubator extends Model implements AuthenticatableContract, AuthorizableCo
         return $this->hasOne(Incubator_profile::class);
     }
 
+    public function paket()
+    {
+        return $this->hasOne(Paket::class, 'id', 'paket_id');
+    }
+
     public function getJWTIdentifier()
     {
         return $this->getKey();

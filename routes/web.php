@@ -3,6 +3,7 @@
 $router->group(['prefix' => 'v1', 'namespace' => 'v1'], function () use ($router) {
     $router->post('/incubator/register', 'Inkubator\AuthController@register');
     $router->post('/startup/register', 'Inkubator\AuthController@register');
+    $router->get('/incubator/cek-expired', 'Admin\Inkubator\IncubatorController@cekExpired');
     
     // Admin
     $router->group(['prefix' => 'admin'], function () use ($router) {
@@ -19,8 +20,9 @@ $router->group(['prefix' => 'v1', 'namespace' => 'v1'], function () use ($router
             $router->get('/total/{data}', 'Admin\Inkubator\IncubatorController@total');   
             
             // Paket
-            $router->get('/startup/pesan', 'Admin\Inkubator\IncubatorController@total');   
-
+            $router->get('/incubator/paket/{id}', 'Admin\Inkubator\IncubatorController@getIncubatorByPaket');
+            $router->post('/incubator/edit-paket/{id}', 'Admin\Inkubator\IncubatorController@updatePaketIncubator');
+            $router->post('/incubator/aktifkan-paket/{id}', 'Admin\Inkubator\IncubatorController@aktifkanPaket');
 
         });
     });

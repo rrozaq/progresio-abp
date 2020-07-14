@@ -55,7 +55,7 @@ class PembayaranController extends Controller
         $data = array(
             'name' => 'TES',
             'email' => 'tesabp@mailnesia.com',
-            'gambar' => 'http://localhost:90/uploads/konfirmasi/ABP%20Incubator-1594642479.png'
+            'gambar' => 'http://progresio.id/api/public/uploads/logo/1591673972.jpeg'
         );
 
         Mail::send('emails.konfirmasi', $data, function($message) use ($data){
@@ -71,7 +71,7 @@ class PembayaranController extends Controller
 
     public function riwayat_menunggu()
     {
-        $incubator = Incubator::where('id', Auth::guard('incubator')->user()->id)->where('status_pembayaran', 0)->get();
+        $incubator = Incubator::where('id', Auth::guard('incubator')->user()->id)->where('status_pembayaran', 0)->with('paket')->get();
         
         $response = [
             'status' => 'success',
