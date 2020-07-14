@@ -13,7 +13,9 @@ class IncubatorLoginResource extends JsonResource
             'expires_in' => $this->expires_in,
             'id' => $this->incubator->id,
             'email' => $this->incubator->email,
-            'status' => $this->incubator->status,
+            'expired' => $this->incubator->expired,
+            'status_pembayaran' => $this->incubator->status_pembayaran,
+            'aktifasi' => $this->incubator->aktifasi,
         ];
     }
 }
