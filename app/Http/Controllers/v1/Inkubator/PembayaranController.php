@@ -53,8 +53,11 @@ class PembayaranController extends Controller
         }
 
         $data = array(
-            'name' => 'TES',
+            'name' => Auth::guard('incubator')->user()->name,
             'email' => 'tesabp@mailnesia.com',
+            'nama_rekening' => $request->nama_rekening,
+            'no_rekening' => $request->no_rekening,
+            'catatan' => $request->catatan,
             'gambar' => 'http://progresio.id/api/public/uploads/logo/1591673972.jpeg'
         );
 
