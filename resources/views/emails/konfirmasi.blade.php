@@ -1,8 +1,8 @@
-Konfirmasi Pembayaran {{ $data['name'] }}
+Konfirmasi Pembayaran {{ $name }}
 <br><br>
 
-    Nama Rekening Pengirim : {{ $data['nama_rekening'] }}
-    No Rekening Pengirim : {{ $data['no_rekening'] }}
-    Catatan : {{ $data['catatan'] }}
+    Nama Rekening Pengirim : {{ $nama_rekening }}
+    No Rekening Pengirim : {{ $no_rekening }}
+    Catatan : {{ $catatan }}
 
     <br>
