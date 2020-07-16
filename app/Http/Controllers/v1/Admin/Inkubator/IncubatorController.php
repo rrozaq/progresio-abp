@@ -120,20 +120,20 @@ class IncubatorController extends Controller
         if($request->aktifasi == 0) {
             $incubator->update([
                 'status_pembayaran' => 0,
-                'aktifasi'  => 0,
+                'aktifasi'  => '0',
                 'expired' => NULL,
             ]);
         }else{
             $incubator->update([
                 'status_pembayaran' => 1,
-                'aktifasi' => 1,
+                'aktifasi' => '1',
                 'expired' => Carbon::now()->addMonths(1),
             ]);
-
-            return response()->json([
-                'status' => 'success',
-            ], 200);
         }
+
+        return response()->json([
+            'status' => 'success',
+        ], 200);
     }
 
     public function cekExpired()
