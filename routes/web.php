@@ -22,7 +22,7 @@ $router->group(['prefix' => 'v1', 'namespace' => 'v1'], function () use ($router
             // Paket
             $router->get('/incubator/paket/{id}', 'Admin\Inkubator\IncubatorController@getIncubatorByPaket');
             $router->post('/incubator/edit-paket/{id}', 'Admin\Inkubator\IncubatorController@updatePaketIncubator');
-            $router->post('/incubator/aktifkan-paket/{id}', 'Admin\Inkubator\IncubatorController@aktifkanPaket');
+            $router->post('/incubator/aktifkan-paket', 'Admin\Inkubator\IncubatorController@aktifkanPaket');
 
         });
     });
