@@ -109,16 +109,24 @@ class IncubatorController extends Controller
         }
     }
 
-    public function aktifkanPaket(int $id)
+    public function aktifkanPaket(Request $request)
     {
-        $incubator = Incubator::find($id);
+        $incubator = Incubator::find($request->id_incubator);
         if(!$incubator){
             return response()->json([
                 'message' => 'id inkubator tidak ada',
             ], 404);
+        }
+        if($request->aktifasi == 0) {
+            $incubator->update([
+                'status_pembayaran' => 0,
+                'aktifasi'  => 0,
+                'expired' => NULL,
+            ]);
         }else{
             $incubator->update([
                 'status_pembayaran' => 1,
+                'aktifasi' => 1,
                 'expired' => Carbon::now()->addMonths(1),
             ]);
 
@@ -136,6 +144,7 @@ class IncubatorController extends Controller
                 return response()->json(['message'=>'belum expired','data' => $incubator], 200);
             } else {
                 $data->update([
+                    'aktifasi' => 0,
                     'status_pembayaran' => 0,
                     'expired' => NULL,
                     'paket_id' => 0
