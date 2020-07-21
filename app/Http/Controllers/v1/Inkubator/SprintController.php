@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\Board;
 use App\Models\Card;
 use App\Models\ListBoard;
+use App\Models\Incubator;
 use Auth;
 use DB;
 
@@ -456,6 +457,48 @@ class SprintController extends Controller
             ];
             return response()->json($response, 404);
         }
+    }
+
+    public function export(Request $request)
+    {
+        $incubator = Incubator::where('id', Auth::guard('incubator')->user()->id)->first();
+        $board = Board::where('id', $request->id_sprint)->first();
+        $sprint_sekarang = ListBoard::select('id','nama')->where('board_id', $request->id_sprint)
+                ->orderBy('board_id','DESC')
+                ->get();
+        $sprint_sebelumnya = ListBoard::select('id','nama')->where('board_id', '<', $request->id_sprint)
+                ->orderBy('board_id','DESC')
+                ->get();
+
+        $data = [
+            'nama_tenant'       => $incubator->name,
+            'ceo'               => $incubator->incubator_profile->manager_name ?? 'tidak ada',
+            'sprint'            => $board->nama,
+            'deadline'          => $board->deadline,
+            'sprint_sekarang'   => [],
+            'sprint_sebelumnya' => [],
+        ];
+
+        foreach($sprint_sekarang as $list){
+            $card = Card::select('title')->where('list_id', $list->id)->get();            
+            $temp = [
+                'list' => $list->nama,
+                'card' => $card
+            ];
+            array_push($data['sprint_sekarang'], $temp);
+        }
+
+        foreach($sprint_sebelumnya as $list){
+            $card = Card::select('title')->where('list_id', $list->id)->get();            
+            $temp = [
+                'list' => $list->nama,
+                'card' => $card
+            ];
+            array_push($data['sprint_sebelumnya'], $temp);
+        }
+
+        return $data;
+
     }
 
 }

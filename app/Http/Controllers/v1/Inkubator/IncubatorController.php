@@ -29,7 +29,6 @@ class IncubatorController extends Controller
         Incubator::where('id', Auth::guard('incubator')->id())
         ->update([
             'name'  => $request->name,
-            'slug'  => Str::slug($request->name, '-'),
             'email' => $request->email,
         ]);
 

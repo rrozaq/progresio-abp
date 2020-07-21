@@ -58,7 +58,7 @@ class PembayaranController extends Controller
             'nama_rekening' => $request->nama_rekening,
             'no_rekening' => $request->no_rekening,
             'catatan' => $request->catatan,
-            'gambar' => 'http://progresio.id/api/public/uploads/logo/1591673972.jpeg'
+            'gambar' => 'http://progresio.id/api/public/uploads/konfirmasi/'.$gambar
         );
 
         Mail::send('emails.konfirmasi', $data, function($message) use ($data){

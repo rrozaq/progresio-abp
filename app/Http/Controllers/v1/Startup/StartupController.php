@@ -30,7 +30,6 @@ class StartupController extends Controller
         Startup::where('id', Auth::guard('startup')->id())
         ->update([
             'name' => $request->name,
-            'slug'  => Str::slug($request->name, '-'),
             'email' => $request->email,
         ]);
 

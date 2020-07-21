@@ -23,7 +23,12 @@ $router->group(['prefix' => 'v1', 'namespace' => 'v1'], function () use ($router
             $router->get('/incubator/paket/{id}', 'Admin\Inkubator\IncubatorController@getIncubatorByPaket');
             $router->post('/incubator/edit-paket/{id}', 'Admin\Inkubator\IncubatorController@updatePaketIncubator');
             $router->post('/incubator/aktifkan-paket', 'Admin\Inkubator\IncubatorController@aktifkanPaket');
-
+            
+            // Master Bank
+            $router->get('/bank', 'Admin\BankController@index');
+            $router->post('/bank', 'Admin\BankController@store');
+            $router->post('/bank/{id}', 'Admin\BankController@update');
+            $router->delete('/bank/{id}', 'Admin\BankController@destroy');
         });
     });
     
@@ -111,6 +116,8 @@ $router->group(['prefix' => 'v1', 'namespace' => 'v1'], function () use ($router
             $router->post('/pesan-paket', 'Inkubator\PembayaranController@bayar');
             $router->post('/konfirmasi-pembayaran', 'Inkubator\PembayaranController@konfirmasi');
             $router->get('/riwayat-pembayaran', 'Inkubator\PembayaranController@riwayat_menunggu');
+
+            $router->post('/export-sprint', 'Inkubator\SprintController@export');
         });
     });
     

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use App\Models\Incubator;
 use App\Models\Incubator_profile;
+use Illuminate\Support\Str;
 use Auth;
 
 class AuthController extends Controller
@@ -27,6 +28,8 @@ class AuthController extends Controller
                 $request->all(),
                 [
                     'incubator_code' => floor(time()-999999999),
+                    'slug'  => Str::slug($request->name, '-'),
+                    'name'  => $request->name,
                     'email' => $request->email,
                     'visible_password' => $request->password,
                     'password'  => Hash::make($request->password)

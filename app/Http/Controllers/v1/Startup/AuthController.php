@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Startup;
 use App\Models\Startup_profile;
 use App\Models\Incubator;
+use Illuminate\Support\Str;
 use Auth;
 
 class AuthController extends Controller
@@ -24,15 +25,24 @@ class AuthController extends Controller
     public function register(Request $request)
     {
         $find = Incubator::where('incubator_code', $request->kode_inkubator)->first();
+        if(!$find){
+            $response = [
+                'message' => 'kode incubator tidak ditemukan',
+            ];
+            return response()->json($response, 404);
+        }
         $request->offsetUnset('kode_inkubator');
         $startup = Startup::create(
             array_merge(
                 $request->all(),
                 [
+                    'name' => $request->name,
+                    'slug'  => Str::slug($request->name, '-'),
                     'email' => $request->email,
                     'visible_password' => $request->password,
                     'password'  => Hash::make($request->password),
-                    'incubator_id'  => $find->id
+                    'incubator_id'  => $find->id,
+                    'accept' => 0
                 ]
             )
         );
